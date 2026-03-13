@@ -1,0 +1,55 @@
+{
+  "name": "@officerdev/workspace",
+  "version": "0.1.0",
+  "description": "Flexible, resizable panel layout system for React workspaces",
+  "type": "module",
+  "license": "MIT",
+  "author": "officerdev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/officerdev/officerdev",
+    "directory": "modules/workspace"
+  },
+  "keywords": [
+    "react",
+    "workspace",
+    "panel",
+    "layout",
+    "resizable",
+    "split-view",
+    "dashboard"
+  ],
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --format esm --splitting --external react --external react-dom --external 'react/jsx-dev-runtime' --external 'react/jsx-runtime' --external lucide-react --external react-resizable-panels --external '@radix-ui/react-context-menu' --external clsx --external tailwind-merge",
+    "example": "bun run example:css && bun --hot example/server.ts",
+    "example:css": "bunx @tailwindcss/cli -i example/app.css -o example/app.built.css"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19",
+    "lucide-react": ">=0.400",
+    "react-resizable-panels": ">=3",
+    "@radix-ui/react-context-menu": ">=2",
+    "clsx": ">=2",
+    "tailwind-merge": ">=2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript/native-preview": "^7.0.0-dev.20260312.1",
+    "bun-plugin-tailwind": "^0.1.2",
+    "react-router": "^7.13.1",
+    "tailwindcss": "^4.2.1"
+  }
+}
