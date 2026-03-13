@@ -7,9 +7,12 @@
   "author": "officerdev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/officerdev/officerdev",
-    "directory": "modules/workspace"
+    "url": "git+ssh://git@github.com/officer-dev/workspace.git"
   },
+  "bugs": {
+    "url": "https://github.com/officer-dev/workspace/issues"
+  },
+  "homepage": "https://github.com/officer-dev/workspace#readme",
   "keywords": [
     "react",
     "workspace",
